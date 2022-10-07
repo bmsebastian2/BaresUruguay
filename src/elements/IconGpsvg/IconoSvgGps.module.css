@@ -1,0 +1,19 @@
+svg {
+    width: 8vw;
+    height: 8vh;
+    text-align: center;
+}
+
+path, polygon, rect {
+    fill: #ff3d00;
+}
+
+@media (max-width:768px) {
+    svg {
+        width: 16vh;
+        height: 16vw;
+        text-align: center;
+
+    }
+
+}

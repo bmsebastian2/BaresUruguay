@@ -1,0 +1,128 @@
+.modal-dialog a {
+  color: #ff3d00;
+}
+
+.btn-close span {
+  font-size: 1.2rem;
+}
+
+.modal:before {
+  content: '';
+  display: block;
+  background: rgba(151, 80, 80, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.modal:target:before {
+  -webkit-transition: -webkit-transform 0.9s ease-out;
+  -moz-transition: -moz-transform 0.9s ease-out;
+  -o-transition: -o-transform 0.9s ease-out;
+  transition: transform 0.9s ease-out;
+  z-index: 10;
+  background: rgba(29, 38, 48, 0.6);
+}
+
+.modal:target+.modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+
+.modal-dialog {
+  background: rgb(29, 38, 48);
+  border: 3px solid #ffffff;
+  border-radius: 25px;
+  margin-left: -200px;
+  position: fixed;
+  left: 55%;
+  top: -100%;
+  z-index: 11;
+  width: 30vw;
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.modal-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-body span {
+  color: #ff3d00 !important;
+  font-size: 1.2rem;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header {
+  border-bottom: #eee solid 1px;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+}
+
+.modal-footer {
+  border-top: #eee solid 1px;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width:768px) {
+
+  .modal-dialog {
+    background: rgb(29, 38, 48);
+    top: -100%;
+    width: 90vw;
+
+  }
+
+}
+
+@media (max-width:360px) {
+
+  .modal-dialog {
+    background: rgb(29, 38, 48);
+    top: -100%;
+    width: 80vw;
+    left: 65vw;
+
+  }
+
+}
+
+@media (max-width:280px) {
+
+  .modal-dialog {
+    background: rgb(29, 38, 48);
+    top: -100%;
+    width: 80vw;
+    left: 80vw;
+
+  }
+
+}

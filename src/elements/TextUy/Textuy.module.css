@@ -1,0 +1,11 @@
+.parrafoUy {
+    font-family: Edu VIC WA NT Beginner, cursive;
+    font-size: 10vmin;
+    color: #ff3d00;
+
+}
+
+.parrafoUy::before {
+    color: #fff;
+    content: ".";
+}

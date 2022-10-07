@@ -1,0 +1,20 @@
+.boxSelect {
+    margin: 20px auto 20px auto;
+    width: 230px;
+    position: relative;
+}
+.selectCustom {
+    border: 5px solid #ffffff;
+    border-radius: 25px;
+    background: rgb(29, 38, 48);
+    font-size: 18px;
+    height: 40px;
+    padding: 0 0 0 12px;
+    width: 250px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.selectCustom:focus {
+    outline: none;
+}
