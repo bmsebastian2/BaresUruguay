@@ -1,31 +1,39 @@
-import { useState, createContext } from "react"
-import {  signInWithEmailAndPassword } from "firebase/auth";
-import auth from '../firebase'
-export const UserContext = createContext()
+import { useState, createContext, useEffect } from "react";
+import {
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import auth from "../firebase";
+export const UserContext = createContext();
 
-const UserProvider = ({children}) => {
+const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(false);
 
-    const [user,setUser] = useState(false)
+  useEffect(() => {
+    const onSuscribe = onAuthStateChanged(auth, (user) => {
+      console.log(user);
 
-    const loginUser = (password,email) =>signInWithEmailAndPassword(auth, 'bm2@gmail.com',123456)
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    // ...
-  } else {
-    // User is signed out
-    // ...
-  }
-});
-    
-    return (
-        <UserContext.Provider value={{user, loginUser}}>
-            {children}
-        </UserContext.Provider>
-    )
-}
+      if (user) {
+        const { email, photoURL, displayName, uid } = user;
+        setUser({ email, photoURL, displayName, uid });
+      } else {
+        setUser(null);
+      }
+    });
 
+    return () => onSuscribe();
+  }, []);
 
-export default UserProvider
+  const loginUser = (password, email) =>
+    signInWithEmailAndPassword(auth, password, email);
+  const signOutUser = (password, email) => signOut(auth);
+
+  return (
+    <UserContext.Provider value={{ user, loginUser, signOutUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+
+export default UserProvider;
