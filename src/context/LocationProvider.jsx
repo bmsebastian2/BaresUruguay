@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { createContext, useState } from "react";
+
 import actualizarPosicion from "../function/FuncionLoction";
 
 export const PosicionProvider = createContext();
 
 const LocationProvider = ({ children }) => {
-  const [location, setLOcation] = useState();
+  const [location, setLOcation] = useState("cariaco");
   const [coordendas, setCoordenadas] = useState();
+  const [latlong, setLatlong] = useState({pLa:'', pLo:''})
 
   // const [data, setData] = useState({
   //   state: apiStates.LOADING,
@@ -19,10 +21,12 @@ const LocationProvider = ({ children }) => {
     console.log("actualizarPosicion()");
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    actualizarPosicion(setLatlong);
+  }, []);
 
   return (
-    <PosicionProvider.Provider value={{ location, reloadPosition }}>
+    <PosicionProvider.Provider value={{ location, reloadPosition,latlong }}>
       {children}
     </PosicionProvider.Provider>
   );

@@ -11,7 +11,7 @@ import { useContext } from "react";
 import { PosicionProvider } from "../../context/LocationProvider";
 
 const WindowsModal = () => {
-  const { reloadPosition } = useContext(PosicionProvider);
+  const { location, reloadPosition, latlong } = useContext(PosicionProvider);
   return (
     <>
       <ContainerModal id="modal-one" title="Confirma tu ubicación.">
@@ -26,7 +26,7 @@ const WindowsModal = () => {
           <a href="#modal-two" className="btn">
             <Button name="No" tamaño={"5rem"} />
           </a>
-          <button onClick={() => reloadPosition()}>actau</button>
+          <button onClick={() => console.log(latlong)}>Actualizar</button>
         </div>
       </ContainerModal>
 

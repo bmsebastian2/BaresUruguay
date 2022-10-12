@@ -1,6 +1,6 @@
 import searcherror from "./ErrorLocation";
 
-const actualizarPosicion = () => {
+const actualizarPosicion = (setLatlong) => {
   const opciones = {
     enableHighAccuracy: true,
     maximumAge: 0, //dispositivo no puede usar una posición almacenada en caché
@@ -20,7 +20,7 @@ const actualizarPosicion = () => {
       let la = position.coords.latitude;
       let lo = position.coords.longitude;
       let coordenadas = { la, lo };
-
+      setLatlong({pLa:la, pLo:lo})
       console.log(coordenadas);
     }
   };
