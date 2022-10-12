@@ -11,9 +11,11 @@ function App() {
   return (
     <div className="App" id="videoElement">
       <Routes>
+        
         <Route path="/" element={<WindowsLoader />}>
           <Route path="" element={<Inicio />} />
         </Route>
+        
         <Route path="AppBusqueda" element={<AppBusqueda />} />
 
         <Route
@@ -26,6 +28,7 @@ function App() {
         />
 
         <Route path="*" element={<Error404 />} />
+        
       </Routes>
     </div>
   );
