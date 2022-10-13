@@ -21,7 +21,7 @@ const Login = () => {
       console.log("Usuario logeado");
       navegate("/IngresarBares/forminput");
     } catch (error) {
-      console.log(error.code);
+      console.log("Error: " + error.code);
     }
   };
 
