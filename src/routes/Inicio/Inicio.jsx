@@ -26,7 +26,7 @@ const Inicio = () => {
             <Ancla enlace={"#modal-two"} name="Seleccionar" />
           </div>
 
-          <LetrasLiquida />          
+          <LetrasLiquida />
           <WindowsModal />
         </div>
 
@@ -35,7 +35,7 @@ const Inicio = () => {
             <Bienvenido />
           </div>
           <div>
-            <Link to="/IngresarBares">Ingresar Bar</Link>
+            <Link to="/IngresarBares/login">Ingresar Bar</Link>
           </div>
         </div>
       </div>
