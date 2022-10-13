@@ -18,10 +18,10 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       await loginUser(data.email, data.password);
-      console.log("Usuario logeado");
+
       navegate("/IngresarBares/forminput");
     } catch (error) {
-      console.log(error.code);
+      console.log("Error: " + error.code);
     }
   };
 
