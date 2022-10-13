@@ -27,7 +27,7 @@ const UserProvider = ({ children }) => {
 
   const loginUser = (password, email) =>
     signInWithEmailAndPassword(auth, password, email);
-  const signOutUser = (password, email) => signOut(auth);
+  const signOutUser = () => signOut(auth);
 
   return (
     <UserContext.Provider value={{ user, loginUser, signOutUser }}>
