@@ -55,7 +55,7 @@ const Login = () => {
                 })}
               />
 
-              {errors.email && <p>{errors.email.message}</p>}
+                {errors.email && <p>{errors.email.message}</p>}
 
               <input
                 type="password"
@@ -67,7 +67,7 @@ const Login = () => {
                   onChange: (e) => (e.target.value = e.target.value.trim()),
                 })}
               />
-              {errors.password && <p>{errors.password.message}</p>}
+                {errors.password && <p>{errors.password.message}</p>}
 
               <div className="">
                 <Button name="Entrar" tamaño="7rem" />
