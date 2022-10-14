@@ -21,6 +21,7 @@
     align-items: center;
     padding: 1rem;
     border: 1px solid white;
+    color: white;
 }
 
 @media (max-width: 768px) {

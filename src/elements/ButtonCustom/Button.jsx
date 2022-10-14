@@ -1,4 +1,4 @@
-const Button = ({ name, tamaño }) => {
+const Button = ({ name, tamaño, click }) => {
   const style = {
     backgroundColor: "rgb(29, 38, 48)",
     color: "white",
@@ -13,7 +13,11 @@ const Button = ({ name, tamaño }) => {
     fontSize: "20px",
     lineHeight: "1px",
   };
-  return <button style={style}>{name}</button>;
+  return (
+    <button style={style} onClick={() => (click ? click() : null)}>
+      {name}
+    </button>
+  );
 };
 
 export default Button;
